@@ -1,0 +1,326 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD100;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFBA08;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD100;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F8C537;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#FFD100;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#FFBA08;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Filters -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feFlood flood-color="#FFD100" flood-opacity="0.5" result="glow-color" />
+      <feComposite in="glow-color" in2="blur" operator="in" result="soft-glow" />
+      <feComposite in="SourceGraphic" in2="soft-glow" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background elements -->
+  <circle cx="250" cy="250" r="200" fill="url(#bgGradient)" opacity="0.1">
+    <animate attributeName="r" values="190;200;190" dur="10s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="250" cy="250" r="170" fill="#FFFAEB" filter="url(#glow)">
+    <animate attributeName="r" values="165;170;165" dur="8s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Radial sound wave animation -->
+  <g transform="translate(250, 250)">
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#FFD100" stroke-width="1" opacity="0.3">
+      <animate attributeName="r" values="0;120" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#FFD100" stroke-width="1" opacity="0.3" begin="1s">
+      <animate attributeName="r" values="0;120" dur="3s" repeatCount="indefinite" begin="1s" />
+      <animate attributeName="opacity" values="0.7;0" dur="3s" repeatCount="indefinite" begin="1s" />
+    </circle>
+    
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#FFD100" stroke-width="1" opacity="0.3" begin="2s">
+      <animate attributeName="r" values="0;120" dur="3s" repeatCount="indefinite" begin="2s" />
+      <animate attributeName="opacity" values="0.7;0" dur="3s" repeatCount="indefinite" begin="2s" />
+    </circle>
+  </g>
+  
+  <!-- Professional musical instruments with detailed animations -->
+  <g filter="url(#shadow)">
+    <!-- Guitar -->
+    <g transform="translate(150, 170)">
+      <!-- Guitar body -->
+      <path d="M-25,-40 C-35,-25 -40,0 -35,30 C-25,55 0,65 25,55 C45,45 50,20 45,-5 C40,-25 25,-40 10,-45 C-5,-50 -15,-50 -25,-40Z" 
+            fill="url(#goldGradient)" stroke="#2D2A32" stroke-width="1.5">
+        <animate attributeName="d" 
+                values="M-25,-40 C-35,-25 -40,0 -35,30 C-25,55 0,65 25,55 C45,45 50,20 45,-5 C40,-25 25,-40 10,-45 C-5,-50 -15,-50 -25,-40Z;
+                        M-23,-38 C-33,-23 -38,2 -33,32 C-23,57 2,67 27,57 C47,47 52,22 47,-3 C42,-23 27,-38 12,-43 C-3,-48 -13,-48 -23,-38Z;
+                        M-25,-40 C-35,-25 -40,0 -35,30 C-25,55 0,65 25,55 C45,45 50,20 45,-5 C40,-25 25,-40 10,-45 C-5,-50 -15,-50 -25,-40Z" 
+                dur="5s" repeatCount="indefinite" />
+      </path>
+      
+      <!-- Sound hole -->
+      <circle cx="0" cy="15" r="12" fill="#2D2A32" opacity="0.8" />
+      
+      <!-- Guitar neck -->
+      <rect x="-4" y="-75" width="8" height="45" fill="#5C4033" />
+      
+      <!-- Guitar head -->
+      <path d="M-7,-80 L7,-80 L10,-95 L-10,-95 Z" fill="#5C4033" />
+      
+      <!-- Strings -->
+      <line x1="-2" y1="-75" x2="-2" y2="40" stroke="#F5F5F5" stroke-width="0.5">
+        <animate attributeName="d" values="M-2,-75 L-2,40;M-2,-74 L-2,41;M-2,-75 L-2,40" dur="0.3s" repeatCount="indefinite" begin="guitarStrum.click" />
+      </line>
+      <line x1="0" y1="-75" x2="0" y2="40" stroke="#F5F5F5" stroke-width="0.5">
+        <animate attributeName="d" values="M0,-75 L0,40;M0,-74 L0,41;M0,-75 L0,40" dur="0.35s" repeatCount="indefinite" begin="guitarStrum.click+0.05s" />
+      </line>
+      <line x1="2" y1="-75" x2="2" y2="40" stroke="#F5F5F5" stroke-width="0.5">
+        <animate attributeName="d" values="M2,-75 L2,40;M2,-74 L2,41;M2,-75 L2,40" dur="0.4s" repeatCount="indefinite" begin="guitarStrum.click+0.1s" />
+      </line>
+      
+      <!-- Guitar frets -->
+      <line x1="-6" y1="-70" x2="6" y2="-70" stroke="#D0D0D0" stroke-width="1" />
+      <line x1="-6" y1="-60" x2="6" y2="-60" stroke="#D0D0D0" stroke-width="1" />
+      <line x1="-6" y1="-50" x2="6" y2="-50" stroke="#D0D0D0" stroke-width="1" />
+      <line x1="-6" y1="-40" x2="6" y2="-40" stroke="#D0D0D0" stroke-width="1" />
+      
+      <!-- Strumming area - invisible interactive element -->
+      <rect id="guitarStrum" x="-30" y="0" width="60" height="40" fill="transparent" style="cursor:pointer" />
+      
+      <animateTransform attributeName="transform" type="rotate" values="-3;3;-3" additive="sum" dur="7s" repeatCount="indefinite" />
+    </g>
+    
+    <!-- Piano - MOVED TO RIGHT SIDE CORNER -->
+    <g transform="translate(350, 150)">
+      <!-- Piano body - made wider and more visible -->
+      <rect x="-60" y="-30" width="120" height="60" rx="5" fill="#2D2A32" stroke="#1A1A1A" stroke-width="2" />
+      
+      <!-- White keys - improved contrast and size -->
+      <rect x="-58" y="-28" width="14" height="42" rx="2" fill="white" stroke="#EEEEEE" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="whiteKey1.click" />
+      </rect>
+      <rect id="whiteKey1" x="-58" y="-28" width="14" height="42" rx="2" fill="white" opacity="0" style="cursor:pointer" />
+      
+      <rect x="-42" y="-28" width="14" height="42" rx="2" fill="white" stroke="#EEEEEE" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="whiteKey2.click" />
+      </rect>
+      <rect id="whiteKey2" x="-42" y="-28" width="14" height="42" rx="2" fill="white" opacity="0" style="cursor:pointer" />
+      
+      <rect x="-26" y="-28" width="14" height="42" rx="2" fill="white" stroke="#EEEEEE" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="whiteKey3.click" />
+      </rect>
+      <rect id="whiteKey3" x="-26" y="-28" width="14" height="42" rx="2" fill="white" opacity="0" style="cursor:pointer" />
+      
+      <rect x="-10" y="-28" width="14" height="42" rx="2" fill="white" stroke="#EEEEEE" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="whiteKey4.click" />
+      </rect>
+      <rect id="whiteKey4" x="-10" y="-28" width="14" height="42" rx="2" fill="white" opacity="0" style="cursor:pointer" />
+      
+      <rect x="6" y="-28" width="14" height="42" rx="2" fill="white" stroke="#EEEEEE" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="whiteKey5.click" />
+      </rect>
+      <rect id="whiteKey5" x="6" y="-28" width="14" height="42" rx="2" fill="white" opacity="0" style="cursor:pointer" />
+      
+      <rect x="22" y="-28" width="14" height="42" rx="2" fill="white" stroke="#EEEEEE" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="whiteKey6.click" />
+      </rect>
+      <rect id="whiteKey6" x="22" y="-28" width="14" height="42" rx="2" fill="white" opacity="0" style="cursor:pointer" />
+      
+      <rect x="38" y="-28" width="14" height="42" rx="2" fill="white" stroke="#EEEEEE" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="whiteKey7.click" />
+      </rect>
+      <rect id="whiteKey7" x="38" y="-28" width="14" height="42" rx="2" fill="white" opacity="0" style="cursor:pointer" />
+      
+      <!-- Black keys - improved contrast -->
+      <rect x="-50" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" stroke="#000000" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="blackKey1.click" />
+      </rect>
+      <rect id="blackKey1" x="-50" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" opacity="0" style="cursor:pointer" />
+      
+      <rect x="-34" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" stroke="#000000" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="blackKey2.click" />
+      </rect>
+      <rect id="blackKey2" x="-34" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" opacity="0" style="cursor:pointer" />
+      
+      <rect x="-2" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" stroke="#000000" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="blackKey3.click" />
+      </rect>
+      <rect id="blackKey3" x="-2" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" opacity="0" style="cursor:pointer" />
+      
+      <rect x="14" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" stroke="#000000" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="blackKey4.click" />
+      </rect>
+      <rect id="blackKey4" x="14" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" opacity="0" style="cursor:pointer" />
+      
+      <rect x="30" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" stroke="#000000" stroke-width="0.5">
+        <animate attributeName="y" values="-28;-26;-28" dur="0.2s" begin="blackKey5.click" />
+      </rect>
+      <rect id="blackKey5" x="30" y="-28" width="9" height="26" rx="1" fill="#1A1A1A" opacity="0" style="cursor:pointer" />
+    </g>
+    
+    <!-- Drum -->
+    <g transform="translate(180, 320)">
+      <!-- Drum body -->
+      <ellipse cx="0" cy="0" rx="40" ry="25" fill="#FFB700" stroke="#2D2A32" stroke-width="1.5" />
+      <ellipse cx="0" cy="-15" rx="35" ry="10" fill="#FFFAEB" stroke="#2D2A32" stroke-width="1" />
+      <ellipse cx="0" cy="15" rx="35" ry="10" fill="#FFFAEB" stroke="#2D2A32" stroke-width="1" />
+      
+      <!-- Drum shell -->
+      <path d="M-35,-14 L-35,14" stroke="#2D2A32" stroke-width="1.5" />
+      <path d="M35,-14 L35,14" stroke="#2D2A32" stroke-width="1.5" />
+      
+      <!-- Drum details -->
+      <circle cx="-20" cy="0" r="8" fill="none" stroke="#2D2A32" stroke-width="0.5" opacity="0.5" />
+      <circle cx="20" cy="0" r="8" fill="none" stroke="#2D2A32" stroke-width="0.5" opacity="0.5" />
+      
+      <!-- Drumsticks -->
+      <line x1="-50" y1="-30" x2="-10" y2="-5" stroke="#8B4513" stroke-width="2.5" stroke-linecap="round">
+        <animate attributeName="x2" values="-10;-10;-50" dur="0.2s" begin="drumHit.click" />
+        <animate attributeName="y2" values="-5;0;-30" dur="0.2s" begin="drumHit.click" />
+      </line>
+      <circle cx="-10" cy="-5" r="3" fill="#D2B48C">
+        <animate attributeName="cy" values="-5;0;-5" dur="0.2s" begin="drumHit.click" />
+      </circle>
+      
+      <line x1="50" y1="-30" x2="10" y2="-5" stroke="#8B4513" stroke-width="2.5" stroke-linecap="round">
+        <animate attributeName="x2" values="10;10;50" dur="0.2s" begin="drumHit.click+0.05s" />
+        <animate attributeName="y2" values="-5;0;-30" dur="0.2s" begin="drumHit.click+0.05s" />
+      </line>
+      <circle cx="10" cy="-5" r="3" fill="#D2B48C">
+        <animate attributeName="cy" values="-5;0;-5" dur="0.2s" begin="drumHit.click+0.05s" />
+      </circle>
+      
+      <!-- Interactive drum surface -->
+      <ellipse id="drumHit" cx="0" cy="-15" rx="35" ry="10" fill="transparent" style="cursor:pointer" />
+      
+      <!-- Drum vibration animation -->
+      <animateTransform attributeName="transform" type="scale" values="1,1;1.03,0.97;1,1" dur="0.2s" begin="drumHit.click" additive="sum" />
+    </g>
+    
+    <!-- Saxophone -->
+    <g transform="translate(310, 320)">
+      <!-- Sax body main curve -->
+      <path d="M-15,-30 C-25,-10 -30,10 -20,30 C-10,40 10,30 15,15" 
+            fill="none" stroke="#FFD100" stroke-width="12" stroke-linecap="round" />
+      
+      <!-- Sax bell -->
+      <path d="M15,15 C20,0 35,-5 35,10" 
+            fill="none" stroke="#FFD100" stroke-width="12" stroke-linecap="round" />
+      
+      <!-- Sax mouthpiece -->
+      <path d="M-15,-30 L-25,-45" 
+            fill="none" stroke="#FFD100" stroke-width="6" stroke-linecap="round" />
+      
+      <!-- Sax details -->
+      <circle cx="-18" cy="-10" r="2" fill="#2D2A32" />
+      <circle cx="-15" cy="0" r="2" fill="#2D2A32" />
+      <circle cx="-12" cy="10" r="2" fill="#2D2A32" />
+      <circle cx="-10" cy="20" r="2" fill="#2D2A32" />
+      
+      <!-- Interactive element -->
+      <path id="saxPlay" d="M-20,-40 L35,15" stroke="transparent" stroke-width="20" fill="none" style="cursor:pointer" />
+      
+      <!-- Sax animation -->
+      <animateTransform attributeName="transform" type="rotate" values="-2;2;-2" additive="sum" dur="3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="scale" values="1;1.05;1" begin="saxPlay.click" dur="0.3s" additive="sum" />
+    </g>
+  </g>
+  
+  <!-- Dynamic sound waves from instruments when played -->
+  <g>
+    <!-- Guitar waves -->
+    <path id="guitarWave" d="M150,170 Q170,150 190,170 Q210,190 230,170" stroke="#FFD100" stroke-width="2" fill="none" opacity="0" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;0.8;0" dur="1.5s" begin="guitarStrum.click" />
+      <animate attributeName="d" values="M150,170 Q170,150 190,170 Q210,190 230,170;M145,170 Q165,140 185,170 Q205,200 225,170" dur="0.75s" begin="guitarStrum.click" />
+    </path>
+    
+    <!-- Piano waves - adjusted for new position -->
+    <path id="pianoWave" d="M400,150 Q420,130 440,150 Q460,170 480,150" stroke="#FFD100" stroke-width="2" fill="none" opacity="0" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="whiteKey1.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="whiteKey2.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="whiteKey3.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="whiteKey4.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="whiteKey5.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="whiteKey6.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="whiteKey7.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="blackKey1.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="blackKey2.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="blackKey3.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="blackKey4.click" />
+      <animate attributeName="opacity" values="0;0.8;0" dur="1s" begin="blackKey5.click" />
+    </path>
+    
+    <!-- Drum waves -->
+    <path id="drumWave" d="M180,320 Q200,300 220,320 Q240,340 260,320" stroke="#FFD100" stroke-width="2" fill="none" opacity="0" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;0.8;0" dur="0.7s" begin="drumHit.click" />
+      <animate attributeName="d" values="M180,320 Q200,300 220,320 Q240,340 260,320;M175,320 Q195,290 215,320 Q235,350 255,320" dur="0.35s" begin="drumHit.click" />
+    </path>
+    
+    <!-- Sax waves -->
+    <path id="saxWave" d="M310,320 Q330,300 350,320 Q370,340 390,320" stroke="#FFD100" stroke-width="2" fill="none" opacity="0" stroke-linecap="round">
+      <animate attributeName="opacity" values="0;0.8;0" dur="2s" begin="saxPlay.click" />
+      <animate attributeName="d" values="M310,320 Q330,300 350,320 Q370,340 390,320;M305,320 Q325,290 345,320 Q365,350 385,320" dur="1s" begin="saxPlay.click" />
+    </path>
+  </g>
+  
+  <!-- Central logo -->
+  <g transform="translate(250, 250)">
+    <circle cx="0" cy="0" r="50" fill="#FFFAEB" stroke="#FFD100" stroke-width="3" />
+    
+    <!-- Stylized "MM" monogram -->
+    <path d="M-25,-10 L-15,10 L-5,-10 L5,10 L15,-10 L25,10" 
+          stroke="#2D2A32" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2D2A32">MUSIC MENTOR</text>
+  </g>
+  
+  <!-- Musical notes floating around -->
+  <g opacity="0.6">
+    <path d="M120,100 L130,90 L130,75 C130,70 120,70 120,75 L120,90 L130,80" fill="#2D2A32">
+      <animate attributeName="transform" type="translate" values="0,0;30,20;60,0;30,-20;0,0" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6;0.3;0.6" dur="15s" repeatCount="indefinite" />
+    </path>
+    <circle cx="120" cy="75" r="3" fill="#2D2A32">
+      <animate attributeName="transform" type="translate" values="0,0;30,20;60,0;30,-20;0,0" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6;0.3;0.6" dur="15s" repeatCount="indefinite" />
+    </circle>
+    
+    <path d="M400,150 L410,140 L410,125 C410,120 400,120 400,125 L400,140 L410,130" fill="#2D2A32">
+      <animate attributeName="transform" type="translate" values="0,0;-20,30;-40,0;-20,-30;0,0" dur="18s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.6;0.9;0.6;0.3" dur="18s" repeatCount="indefinite" />
+    </path>
+    <circle cx="400" cy="125" r="3" fill="#2D2A32">
+      <animate attributeName="transform" type="translate" values="0,0;-20,30;-40,0;-20,-30;0,0" dur="18s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.6;0.9;0.6;0.3" dur="18s" repeatCount="indefinite" />
+    </circle>
+    
+    <path d="M250,440 L260,430 L260,415 C260,410 250,410 250,415 L250,430 L260,420" fill="#2D2A32">
+      <animate attributeName="transform" type="translate" values="0,0;40,-30;80,0;40,30;0,0" dur="20s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0.7;1;0.7;0.4" dur="20s" repeatCount="indefinite" />
+    </path>
+    <circle cx="250" cy="415" r="3" fill="#2D2A32">
+      <animate attributeName="transform" type="translate" values="0,0;40,-30;80,0;40,30;0,0" dur="20s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0.7;1;0.7;0.4" dur="20s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

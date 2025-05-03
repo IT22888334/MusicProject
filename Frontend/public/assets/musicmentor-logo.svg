@@ -1,0 +1,53 @@
+<svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+
+  
+  <!-- Musical note icon - larger size -->
+  <g transform="translate(12, 10) scale(1.2)">
+    <path d="M38,10 C38,10 38,34 38,40 C38,44.4 34.4,48 30,48 C25.6,48 22,44.4 22,40 C22,35.6 25.6,32 30,32 C31.1,32 32.1,32.2 33,32.6 L33,2 L57,8 L57,32 C57,36.4 53.4,40 49,40 C44.6,40 41,36.4 41,32 C41,27.6 44.6,24 49,24 C50.1,24 51.1,24.2 52,24.6 L52,14 L38,10 Z" fill="#FFD100" stroke="#2D2A32" stroke-width="2.5" />
+  </g>
+  
+  <!-- Text "MusicMentor" - larger font -->
+  <text x="85" y="45" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="#2D2A32">Music<tspan fill="#FFD100">Mentor</tspan></text>
+  
+  <!-- Tagline -->
+  <text x="87" y="65" font-family="Arial, sans-serif" font-size="14" fill="#645F68">Learn • Share • Collaborate</text>
+  
+  <!-- Animated sound waves -->
+  <g transform="translate(220, 25)">
+    <!-- First wave -->
+    <path d="M5,15 Q7.5,5 10,15 Q12.5,25 15,15 Q17.5,5 20,15 Q22.5,25 25,15 Q27.5,5 30,15 Q32.5,25 35,15 Q37.5,5 40,15 Q42.5,25 45,15" fill="none" stroke="#FFB700" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="d" 
+               values="M5,15 Q7.5,5 10,15 Q12.5,25 15,15 Q17.5,5 20,15 Q22.5,25 25,15 Q27.5,5 30,15 Q32.5,25 35,15 Q37.5,5 40,15 Q42.5,25 45,15;
+                       M5,15 Q7.5,20 10,15 Q12.5,10 15,15 Q17.5,20 20,15 Q22.5,10 25,15 Q27.5,20 30,15 Q32.5,10 35,15 Q37.5,20 40,15 Q42.5,10 45,15;
+                       M5,15 Q7.5,5 10,15 Q12.5,25 15,15 Q17.5,5 20,15 Q22.5,25 25,15 Q27.5,5 30,15 Q32.5,25 35,15 Q37.5,5 40,15 Q42.5,25 45,15" 
+               dur="3s" 
+               repeatCount="indefinite" />
+    </path>
+    
+    <!-- Second wave -->
+    <path d="M5,20 Q7.5,10 10,20 Q12.5,30 15,20 Q17.5,10 20,20 Q22.5,30 25,20 Q27.5,10 30,20 Q32.5,30 35,20 Q37.5,10 40,20 Q42.5,30 45,20" fill="none" stroke="#FFB700" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="d" 
+               values="M5,20 Q7.5,10 10,20 Q12.5,30 15,20 Q17.5,10 20,20 Q22.5,30 25,20 Q27.5,10 30,20 Q32.5,30 35,20 Q37.5,10 40,20 Q42.5,30 45,20;
+                       M5,20 Q7.5,25 10,20 Q12.5,15 15,20 Q17.5,25 20,20 Q22.5,15 25,20 Q27.5,25 30,20 Q32.5,15 35,20 Q37.5,25 40,20 Q42.5,15 45,20;
+                       M5,20 Q7.5,10 10,20 Q12.5,30 15,20 Q17.5,10 20,20 Q22.5,30 25,20 Q27.5,10 30,20 Q32.5,30 35,20 Q37.5,10 40,20 Q42.5,30 45,20" 
+               dur="2.5s" 
+               repeatCount="indefinite" />
+    </path>
+    
+    <!-- Third wave (added for more visual interest) -->
+    <path d="M5,25 Q7.5,20 10,25 Q12.5,30 15,25 Q17.5,20 20,25 Q22.5,30 25,25 Q27.5,20 30,25 Q32.5,30 35,25 Q37.5,20 40,25 Q42.5,30 45,25" fill="none" stroke="#FFB700" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="d" 
+               values="M5,25 Q7.5,20 10,25 Q12.5,30 15,25 Q17.5,20 20,25 Q22.5,30 25,25 Q27.5,20 30,25 Q32.5,30 35,25 Q37.5,20 40,25 Q42.5,30 45,25;
+                       M5,25 Q7.5,30 10,25 Q12.5,20 15,25 Q17.5,30 20,25 Q22.5,20 25,25 Q27.5,30 30,25 Q32.5,20 35,25 Q37.5,30 40,25 Q42.5,20 45,25;
+                       M5,25 Q7.5,20 10,25 Q12.5,30 15,25 Q17.5,20 20,25 Q22.5,30 25,25 Q27.5,20 30,25 Q32.5,30 35,25 Q37.5,20 40,25 Q42.5,30 45,25" 
+               dur="3.5s" 
+               repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Pulse animation around the musical note -->
+  <circle cx="40" cy="40" r="30" fill="none" stroke="#FFD100" stroke-width="4.5" opacity="1.6">
+    <animate attributeName="r" values="30;35;30" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite" />
+  </circle>
+</svg>
