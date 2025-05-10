@@ -13,7 +13,7 @@ spring:
     active: dev
   data:
     mongodb:
-      uri: mongodb+srv://kaveesha0321:A4cFY1pb8bgXiZP8@paf.dhfhcki.mongodb.net/paf_db?retryWrites=true&w=majority&appName=PAF
+      uri: mongodb+srv://admin:admin12345@cluster0.888yz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
       database: ${MONGODB_DB}
 
   security:
